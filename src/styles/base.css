@@ -1,0 +1,121 @@
+/* Shared styles for every component. All values come from tokens.css. */
+
+.aui-card {
+  width: min(520px, calc(100vw - 32px));
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  box-shadow: 0 1px 0 var(--color-line), 0 20px 40px -28px rgba(27, 34, 48, 0.4);
+}
+.aui-card *, .aui-card *::before, .aui-card *::after { box-sizing: border-box; }
+.aui-card :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+.aui-head { padding: var(--space-5) var(--space-5) var(--space-4); }
+.aui-eyebrow { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-ink-muted); margin: 0 0 var(--space-2); }
+.aui-title { font-family: var(--font-serif); font-weight: 400; font-size: var(--text-lg); line-height: var(--leading-tight); margin: 0; }
+.aui-summary { margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); line-height: var(--leading-snug); }
+
+.aui-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-line);
+  font-size: var(--text-sm); color: var(--color-ink-muted);
+}
+.aui-actions { display: flex; gap: var(--space-2); margin-left: auto; }
+
+.aui-btn {
+  font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  border: 1px solid var(--color-line); background: var(--color-surface); color: var(--color-ink);
+  cursor: pointer; white-space: nowrap;
+}
+.aui-btn:hover:not(:disabled) { background: var(--color-paper); }
+.aui-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.aui-btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.aui-btn--primary:hover:not(:disabled) { background: var(--color-accent); filter: brightness(1.08); }
+.aui-btn--danger { background: var(--color-reject); border-color: var(--color-reject); color: var(--color-surface); }
+.aui-btn--danger:hover:not(:disabled) { background: var(--color-reject); filter: brightness(1.08); }
+.aui-btn--quiet { border-color: transparent; background: none; }
+
+.aui-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-ink-muted); flex: none; }
+.aui-dot--caution { background: var(--color-caution); }
+.aui-dot--approve { background: var(--color-approve); }
+.aui-dot--reject { background: var(--color-reject); }
+.aui-dot--accent { background: var(--color-accent); }
+
+.aui-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: var(--text-xs); line-height: 1.4; padding: 1px 8px; border-radius: var(--radius-pill);
+  border: 1px solid var(--color-line); color: var(--color-ink-muted); white-space: nowrap;
+}
+.aui-tag--caution { color: var(--color-caution); border-color: currentColor; }
+.aui-tag--reject { color: var(--color-reject); border-color: currentColor; }
+
+/* PlanPreview */
+.aui-plan { list-style: none; margin: 0; padding: 0 var(--space-5); }
+.aui-plan-step { display: grid; grid-template-columns: 28px 1fr; gap: var(--space-3); padding: var(--space-3) 0; border-top: 1px solid var(--color-line); }
+.aui-plan-step[data-included="false"] .aui-plan-body { opacity: 0.45; }
+.aui-plan-step[data-included="false"] .aui-plan-title { text-decoration: line-through; }
+.aui-num {
+  width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center;
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  border: 1px solid var(--color-line); color: var(--color-ink-muted); font-variant-numeric: tabular-nums;
+}
+.aui-plan-title { font-size: var(--text-sm); font-weight: var(--weight-medium); margin: 2px 0 0; }
+.aui-plan-detail { font-size: var(--text-sm); color: var(--color-ink-muted); margin: 2px 0 var(--space-2); line-height: var(--leading-snug); }
+.aui-plan-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.aui-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--color-ink-muted); cursor: pointer; margin-left: auto; }
+.aui-toggle input { accent-color: var(--color-accent); margin: 0; }
+
+/* ApprovalStep */
+.aui-details { margin: 0; padding: 0 var(--space-5); }
+.aui-details div { display: flex; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) 0; border-top: 1px solid var(--color-line); font-size: var(--text-sm); }
+.aui-details dt { color: var(--color-ink-muted); }
+.aui-details dd { margin: 0; text-align: right; }
+.aui-ack { display: flex; gap: var(--space-2); align-items: flex-start; padding: var(--space-3) var(--space-5); font-size: var(--text-sm); border-top: 1px solid var(--color-line); cursor: pointer; }
+.aui-ack input { accent-color: var(--color-reject); margin-top: 3px; }
+.aui-decision { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-ink); }
+
+/* TaskProgress */
+.aui-bar { height: 4px; border-radius: 4px; background: var(--color-line); margin: var(--space-4) var(--space-5) 0; overflow: hidden; }
+.aui-bar span { display: block; height: 100%; background: var(--color-accent); transition: width 400ms ease-out; }
+.aui-bar[data-state="failed"] span { background: var(--color-reject); }
+.aui-bar[data-state="done"] span { background: var(--color-approve); }
+.aui-steps { list-style: none; margin: var(--space-4) 0 0; padding: 0 var(--space-5) var(--space-2); }
+.aui-task { border-top: 1px solid var(--color-line); }
+.aui-task-row { display: grid; grid-template-columns: 20px 1fr auto; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+.aui-task[data-status="running"] .aui-task-row,
+.aui-task[data-status="done"] .aui-task-row,
+.aui-task[data-status="failed"] .aui-task-row { color: var(--color-ink); }
+.aui-task[data-status="skipped"] .aui-task-name { text-decoration: line-through; }
+.aui-time { font-size: var(--text-xs); font-variant-numeric: tabular-nums; color: var(--color-ink-muted); }
+
+.aui-mark { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--color-line); display: grid; place-items: center; }
+.aui-task[data-status="running"] .aui-mark { border-color: var(--color-accent); border-right-color: transparent; animation: aui-spin 0.8s linear infinite; }
+.aui-task[data-status="done"] .aui-mark { border-color: var(--color-approve); background: var(--color-approve); }
+.aui-task[data-status="done"] .aui-mark::after { content: ""; width: 7px; height: 4px; border: 2px solid var(--color-surface); border-top: 0; border-right: 0; transform: translateY(-1px) rotate(-45deg); }
+.aui-task[data-status="failed"] .aui-mark { border-color: var(--color-reject); background: var(--color-reject); }
+.aui-task[data-status="failed"] .aui-mark::after { content: "!"; color: var(--color-surface); font-size: 11px; font-weight: 700; line-height: 1; }
+.aui-task[data-status="skipped"] .aui-mark { border-style: dashed; }
+@keyframes aui-spin { to { transform: rotate(360deg); } }
+
+.aui-log summary { list-style: none; cursor: pointer; }
+.aui-log summary::-webkit-details-marker { display: none; }
+.aui-log summary .aui-task-name { text-decoration: underline; text-decoration-color: var(--color-line); text-underline-offset: 3px; }
+.aui-log pre {
+  margin: 0 0 var(--space-3) 32px; padding: var(--space-3); border-radius: var(--radius-md);
+  background: var(--color-paper); font-size: var(--text-xs); line-height: 1.6; white-space: pre-wrap; color: var(--color-ink-muted);
+}
+.aui-error { margin: 0 0 var(--space-3) 32px; font-size: var(--text-sm); color: var(--color-reject); display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; }
+
+.aui-report { padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-line); font-size: var(--text-sm); }
+.aui-report p { margin: 0 0 var(--space-2); }
+.aui-report p:last-child { margin: 0; }
+
+.aui-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aui-task[data-status="running"] .aui-mark { animation: none; border-right-color: var(--color-accent); }
+  .aui-bar span { transition: none; }
+}
